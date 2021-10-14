@@ -21,8 +21,8 @@ jobs:
         run: npx eslint webapp
       - name: Deploying Project
       - uses: integrtr/ui5-deploy@master
-          with:
-            type: 'bsp'
-            user: ${{ secrets.ABAP_USER }}
-            password: ${{ secrets.ABAP_PASSWORD }}
-            host: ${{ secrets.ABAP_HOST }}
+        with:
+          type: 'bsp'
+          user: ${{ secrets.ABAP_USER }}
+          password: ${{ secrets.ABAP_PASSWORD }}
+          host: ${{ secrets.ABAP_HOST }}
