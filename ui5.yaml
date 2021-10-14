@@ -14,14 +14,14 @@ server:
         ignoreCertError: true
         backend:
           - path: /sap
-            url: https://zzz-sap-fiori-s.zeppelin.corp/
-            client: "100"
+            url: https://zzz-sap-fiori-s.zeppelin.corp:8000/
+            client: '100'
         ui5:
           path:
             - /resources
             - /test-resources
           url: https://ui5.sap.com
-          version: "1.71.11"
+          version: '1.71.11'
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -30,5 +30,5 @@ server:
 builder:
   resources:
     excludes:
-      - "/localService/**"
-      - "/test/**"
+      - '/localService/**'
+      - '/test/**'
