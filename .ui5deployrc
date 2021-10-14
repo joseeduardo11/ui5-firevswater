@@ -1,0 +1,15 @@
+{
+  "cwd": "./dist",
+  "files": "**/*.*",
+  "client": "100",
+  "useStrictSSL": false,
+  "language": "EN",
+  "package": "YFIORI",
+  "bspContainer": "ZUI5BP",
+  "bspContainerText": "Boilerplate",
+  "createTransport": true,
+  "transportText": "Test Transport",
+  "transportUseLocked": false,
+  "transportUseUserMatch": false,
+  "calculateApplicationIndex": true
+}
