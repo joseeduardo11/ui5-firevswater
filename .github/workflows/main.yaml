@@ -20,7 +20,7 @@ jobs:
       - name: lint webapp
         run: npx eslint webapp
       - name: Deploying Project
-      - uses: integrtr/ui5-deploy@master
+        uses: integrtr/ui5-deploy@1.1.0
         with:
           type: 'bsp'
           user: ${{ secrets.ABAP_USER }}
