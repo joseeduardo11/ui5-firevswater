@@ -8,30 +8,27 @@ resources:
       webapp: webapp
 server:
   customMiddleware:
-    - name: ui5-middleware-simpleproxy
+    - name: fiori-tools-proxy
       afterMiddleware: compression
-      mountPath: /BASE_URL
       configuration:
-        baseUri: process.env.UI5_MIDDLEWARE_SIMPLE_PROXY_BASEURI
-    - name: ui5-middleware-livereload
+        ignoreCertError: true
+        backend:
+          - path: /sap
+            url: https://zzz-sap-fiori-s.zeppelin.corp/
+            client: "100"
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+          version: "1.71.11"
+    - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
         port: 35729
         path: webapp
-    - name: ui5-middleware-index
-      afterMiddleware: compression
-      configuration:
-        index: 'index.html'
-    - name: ui5-middleware-livetranspile
-      afterMiddleware: compression
-      configuration:
-        excludePatterns:
-          - '**/thirdparty/'
 builder:
-  customTasks:
-    - name: ui5-task-transpile
-      afterTask: replaceVersion
-      configuration:
-        removeConsoleStatements: true
-        excludePatterns:
-          - '**/thirdparty/**'
+  resources:
+    excludes:
+      - "/localService/**"
+      - "/test/**"
