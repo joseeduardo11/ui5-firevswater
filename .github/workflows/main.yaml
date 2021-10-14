@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: lint webapp
         run: npx eslint webapp
-      - name: Deploying Project
+      - name: Deploying Project SAP
         uses: integrtr/ui5-deploy@v1.1.0
         with:
           type: 'bsp'
